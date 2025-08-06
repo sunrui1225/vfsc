@@ -1,5 +1,5 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
+  <div :style="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
     <div :class="{hasTagsView:needTagsView}" class="main-container">
@@ -52,11 +52,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../styles/mixin.scss";
-  @import "../styles/variables.scss";
+  @use "@/styles/mixin" as mix;
+  @use "@/styles/variables" as vars;
 
   .app-wrapper {
-    @include clearfix;
+    @include mix.clearfix;
     position: relative;
     height: 100%;
     width: 100%;
@@ -82,7 +82,7 @@ export default {
     top: 0;
     right: 0;
     z-index: 9;
-    width: calc(100% - #{$sideBarWidth});
+    width: calc(100% - #{vars.$sideBarWidth});
     transition: width 0.28s;
   }
 

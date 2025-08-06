@@ -17,23 +17,23 @@ const routes = [
         ]
     },
     {
-        path: 'search',
+        path: '/search',
         component: Layout,
         hidden: true,
         children: [
             {
-                path: '/search',
+                path: '/',
                 component: () => import('../views/search/index')
             }
         ]
     },
     {
-        path: 'tools',
+        path: '/tools',
         component: Layout,
         hidden: true,
         children: [
             {
-                path: '/tools',
+                path: '/',
                 component: () => import('../views/tools/index')
             }
         ]
